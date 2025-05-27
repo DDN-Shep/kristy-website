@@ -1,0 +1,22 @@
+{
+  "html.format.wrapLineLength": 0,
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "editor.quickSuggestions": {
+    "strings": "on"
+  },
+  "tailwindCSS.classAttributes": ["class", "ui"],
+  "tailwindCSS.experimental.classRegex": [
+    ["ui:\\s*{([^)]*)\\s*}", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
+  ],
+  "html.format.wrapAttributes": "force-aligned",
+  "vue.inlayHints.vBindShorthand": true,
+  "vue.inlayHints.missingProps": true,
+  "vue.inlayHints.inlineHandlerLeading": true,
+  "prettier.bracketSameLine": true,
+  "prettier.enable": true,
+  "prettier.singleAttributePerLine": true,
+  "vetur.format.defaultFormatter.html": "prettier",
+  "editor.formatOnSave": true
+}
