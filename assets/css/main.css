@@ -1,2 +1,21 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
+
+@theme static {
+  --color-primary: #4898ac;
+  --color-secondary: #33ff57;
+}
+
+html {
+  scrollbar-gutter: stable;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translatey(40px);
+  }
+  100% {
+    opacity: 1;
+  }
+}

@@ -17,6 +17,6 @@
   "prettier.bracketSameLine": true,
   "prettier.enable": true,
   "prettier.singleAttributePerLine": true,
-  "vetur.format.defaultFormatter.html": "prettier",
+  "volar.takeoverMode.enabled": true,
   "editor.formatOnSave": true
 }
