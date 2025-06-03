@@ -4,7 +4,11 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ['~/assets/css/main.css'],
   image: {
-    dir: 'assets/images'
+    dir: 'assets/images',
+    provider: 'netlify',
+    netlify: {
+      baseURl: process.env.IMAGES_URL
+    }
   },
   modules: [
     '@nuxt/content',
