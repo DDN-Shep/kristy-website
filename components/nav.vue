@@ -26,17 +26,21 @@ const items = ref<NavigationMenuItem[]>([
   {
     label: "Coaching",
     children: [
-      { label: "Self-study", to: "/self-study" },
+      { label: "1:1 Coaching", to: "/coaching" },
       { label: "Mother Wound Healing", to: "/mother-wound-healing" }
     ]
   },
   {
-    label: "Learn",
-    to: "/learn",
+    label: "Self-study",
+    to: "/self-study"
+  },
+  {
+    label: "Blog",
+    to: "/blog"
   },
   {
     label: "Contact",
-    to: "/contact",
+    to: "/contact"
   },
 ]);
 </script>

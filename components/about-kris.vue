@@ -1,5 +1,5 @@
 <template>
-  <div class="card w-100 rounded-2xl"
+  <div class="card w-100 rounded-2xl bg-white"
        :data-state="state">
     <div class="card-header">
       <div class="card-cover"
@@ -8,7 +8,7 @@
                alt="Kristina Sheppard"
                class="card-avatar" />
       <h1 class="card-fullname">Kristina Sheppard</h1>
-      <h2 class="card-jobtitle">Life Coach and Supervisor</h2>
+      <h2 class="job-title">Life Coach and Supervisor</h2>
     </div>
     <div class="card-main">
       <div class="card-section is-active"
@@ -24,15 +24,23 @@
           </div>
         </div>
         <div class="px-5 text-center text-xl">
-          <ULink to="/"
+          <ULink to="https://www.linkedin.com/company/kristina-sheppard/"
+                 target="_blank"
                  class="mr-4">
             <UIcon name="i-hugeicons-linkedin-02" />
           </ULink>
-          <ULink to="/"
+          <ULink to="https://www.youtube.com/@itskrissheppard"
+                 target="_blank"
+                 class="mr-4">
+            <UIcon name="i-hugeicons-youtube" />
+          </ULink>
+          <ULink to="https://www.instagram.com/itskrissheppard"
+                 target="_blank"
                  class="mr-4">
             <UIcon name="i-hugeicons-instagram" />
           </ULink>
-          <ULink to="/">
+          <ULink to="https://www.threads.net/@itskrissheppard"
+                 target="_blank">
             <UIcon name="i-hugeicons-threads" />
           </ULink>
         </div>
@@ -64,29 +72,48 @@
            id="contact">
         <div class="card-content">
           <div class="card-subtitle">CONTACT</div>
-          <div class="card-contact-wrapper">
-            <div class="card-contact">
-              <UIcon name="i-lucide-map-pin" />
+          <div>
+            <ULink to=""
+                   class="py-1 block">
+              <UIcon name="i-lucide-map-pin"
+                     class="px-5" />
               London, UK
-            </div>
-            <div class="card-contact">
-              <UIcon name="i-lucide-coffee" />
-              <a href="https://kristinasheppard.substack.com"
-                 class="i-lucide-mail"
-                 rel="noopener noreferrer nofollow external">Coaching Mastery Cafe</a>
-            </div>
-            <div class="card-contact">
-              <UIcon name="i-lucide-mail" />
+            </ULink>
+            <ULink to="https://kristinasheppard.substack.com"
+                   class="py-1 block">
+              <UIcon name="i-lucide-coffee"
+                     class="px-5" />
+              Coaching Mastery Cafe
+            </ULink>
+            <ULink to="mailto:kris@krissheppard.com"
+                   class="py-1 block">
+              <UIcon name="i-lucide-mail"
+                     class="px-5" />
               kris@krissheppard.com
-            </div>
-            <button class="contact-me">WORK TOGETHER</button>
+            </ULink>
+            <button class="contact-me">
+              WORK TOGETHER
+            </button>
           </div>
         </div>
       </div>
+      <!-- <div>
+        <UButton @click="setState"
+                 data-section="#about"
+                 variant="link"
+                 label="About" />
+        <UButton @click="setState"
+                 data-section="#experience"
+                 variant="link"
+                 label="Experience" />
+        <UButton @click="setState"
+                 data-section="#contact"
+                 variant="link"
+                 label="Contact" />
+      </div> -->
       <div class="card-buttons">
         <button @click="setState"
-                data-section="#about"
-                class="is-active">ABOUT</button>
+                data-section="#about">ABOUT</button>
         <button @click="setState"
                 data-section="#experience">EXPERIENCE</button>
         <button @click="setState"
@@ -97,9 +124,10 @@
 </template>
 
 <!--
-https://kristina-s-school-a9f8.thinkific.com/
+https://kristinasheppard.substack.com
+https://kristina-s-school-a9f8.thinkific.com
 https://www.youtube.com/watch?v=FiigLLbsKqI
-https://www.instagram.com/itskrissheppard/
+https://www.instagram.com/itskrissheppard
 https://www.threads.net/@itskrissheppard
  -->
 
@@ -118,10 +146,18 @@ const setState = e => {
 </script>
 
 <style scoped>
+/* .my-custom-card {
+  background-color: var(--color-white);
+  color: var(--color-text);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+} */
+
 .card {
   position: relative;
   overflow: hidden;
-  background-color: white;
+  background-color: var(--color-white);
   display: flex;
   flex-direction: column;
   z-index: 1;
@@ -170,7 +206,7 @@ const setState = e => {
   font-size: 18px;
 }
 
-.card:not([data-state="#about"]) .card-jobtitle {
+.card:not([data-state="#about"]) .job-title {
   font-size: 10px;
 }
 
@@ -189,12 +225,10 @@ const setState = e => {
 
 .card-cover {
   width: 100%;
-  height: 100%;
-  position: absolute;
   height: 160px;
+  position: absolute;
   top: -20%;
   left: 0;
-  will-change: top;
   background-size: cover;
   background-position: center;
   filter: blur(30px);
@@ -226,8 +260,9 @@ const setState = e => {
   left: 50%;
 }
 
-.card-jobtitle {
+.job-title {
   position: absolute;
+  left: 50%;
   bottom: 0;
   font-size: 11px;
   white-space: nowrap;
@@ -235,8 +270,6 @@ const setState = e => {
   opacity: 0.7;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  margin: 0;
-  left: 50%;
   transform: translateX(-50%) translateY(5px);
 }
 
@@ -285,7 +318,6 @@ const setState = e => {
   cursor: pointer;
   color: #5c5c6d;
   transition: 0.3s;
-  font-family: "Jost", sans-serif;
   font-weight: 500;
   outline: 0;
   border-bottom: 3px solid transparent;
@@ -325,7 +357,6 @@ const setState = e => {
   top: 0;
   height: 100%;
   position: absolute;
-  content: "";
 }
 
 .card-item {
@@ -342,7 +373,6 @@ const setState = e => {
 
 .card-item:after {
   content: attr(data-year);
-  width: 10px;
   position: absolute;
   top: 0;
   left: 37px;
