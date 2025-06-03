@@ -4,7 +4,7 @@
       <h1 class="text-3xl pb-5">Welcome to a Space for Growth and Mastery</h1>
     </div>
     <div class="col-span-4">
-      <NuxtImg src="~/assets/images/home-1.jpg"
+      <NuxtImg src="/home-1.jpg"
                alt="Kristina Sheppard"
                class="w-100 rounded-4xl" />
     </div>
