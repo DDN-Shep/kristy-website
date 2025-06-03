@@ -4,6 +4,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ['~/assets/css/main.css'],
   image: {
+    provider: 'ipx',
     dir: 'assets/images'
   },
   modules: [
