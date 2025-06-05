@@ -18,7 +18,7 @@ const state = reactive({
 const toast = useToast();
 async function getPosts() {
   toast.add({ title: 'Searching', description: 'Getting blog posts.', color: 'info' });
-  const response = await fetch('/.netlify/functions/proxy');
+  const response = await fetch('/.netlify/functions/substack-proxy');
   state.posts = await response.json();
   console.log('state.posts', state.posts);
 };
