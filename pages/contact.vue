@@ -1,9 +1,9 @@
 <template>
-  <div class="grid grid-cols-10">
-    <div class="col-span-6 mx-auto">
+  <div class="flex flex-col lg:grid lg:grid-cols-10">
+    <div class="lg:col-span-6 mx-auto">
       <UForm :schema="schema"
              :state="state"
-             class="space-y-4 space-x-4 w-100"
+             class="space-y-4 space-x-4 w-3xl lg:w-100"
              @submit="onSubmit">
         <UFormField label="Your name"
                     name="name">
@@ -30,7 +30,7 @@
                  label="Send Message" />
       </UForm>
     </div>
-    <div class="col-span-4">
+    <div class="col-span-4 mx-auto">
       <AboutKris />
     </div>
   </div>

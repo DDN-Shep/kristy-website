@@ -10,6 +10,10 @@ html {
   scrollbar-gutter: stable;
 }
 
+body {
+  --ui-bg: var(--ui-color-white);
+}
+
 @keyframes fadeIn {
   0% {
     opacity: 0;
