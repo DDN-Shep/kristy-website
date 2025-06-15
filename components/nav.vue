@@ -1,15 +1,39 @@
 <template>
-  <div class="py-8 px-2">
+  <div class="py-2 block md:hidden">
+    <UCollapsible :unmount-on-hide="false">
+      <UButton icon="i-lucide-menu"
+               variant="outline"
+               size="xl" />
+      <template #content>
+        <UNavigationMenu :items="items"
+                         :ui="{ link: 'text-lg px-4 hover:underline' }"
+                         orientation="vertical"
+                         content-orientation="vertical"
+                         variant="link"
+                         class="w-full absolute z-1 bg-white" />
+      </template>
+    </UCollapsible>
+  </div>
+  <div class="py-8 px-2 hidden md:block">
     <UNavigationMenu :items="items"
                      :ui="{ link: 'text-lg px-4 hover:underline' }"
-                     variant="link"
+                     orientation="horizontal"
                      content-orientation="vertical"
+                     variant="link"
                      class="w-full" />
   </div>
 </template>
 
 <script setup lang="ts">
 import type { NavigationMenuItem } from "@nuxt/ui";
+import { useBreakpoints } from '@vueuse/core'
+
+const breakpoints = useBreakpoints({
+  sm: 640,
+  md: 768,
+  lg: 1024
+})
+const isMobile = breakpoints.smaller('md')
 
 const items = ref<NavigationMenuItem[]>([
   {

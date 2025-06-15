@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="absolute z-0">
     <br>
     <article v-for="post in state.posts"
              :key="post.id"
