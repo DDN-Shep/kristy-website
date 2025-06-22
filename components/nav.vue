@@ -1,12 +1,12 @@
 <template>
   <div class="py-2 block md:hidden">
-    <UCollapsible :unmount-on-hide="false">
+    <UCollapsible :unmount-on-hide="true">
       <UButton icon="i-lucide-menu"
                variant="outline"
                size="xl" />
       <template #content>
         <UNavigationMenu :items="items"
-                         :ui="{ link: 'text-lg px-4 hover:underline' }"
+                         :ui="{ link: 'text-lg px-4 hover:underline', content: 'bg-white' }"
                          orientation="vertical"
                          content-orientation="vertical"
                          variant="link"
@@ -16,7 +16,7 @@
   </div>
   <div class="py-8 px-2 hidden md:block">
     <UNavigationMenu :items="items"
-                     :ui="{ link: 'text-lg px-4 hover:underline' }"
+                     :ui="{ link: 'text-lg px-4 hover:underline', content: 'bg-white' }"
                      orientation="horizontal"
                      content-orientation="vertical"
                      variant="link"
@@ -26,19 +26,19 @@
 
 <script setup lang="ts">
 import type { NavigationMenuItem } from "@nuxt/ui";
-import { useBreakpoints } from '@vueuse/core'
+// import { useBreakpoints } from '@vueuse/core'
 
-const breakpoints = useBreakpoints({
-  sm: 640,
-  md: 768,
-  lg: 1024
-})
-const isMobile = breakpoints.smaller('md')
+// const breakpoints = useBreakpoints({
+//   sm: 640,
+//   md: 768,
+//   lg: 1024
+// })
+// const isMobile = breakpoints.smaller('md')
 
 const items = ref<NavigationMenuItem[]>([
   {
     label: "Home",
-    to: "/"
+    to: "/home-layout"
   },
   {
     label: "Supervision",
