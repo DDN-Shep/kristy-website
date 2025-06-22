@@ -38,7 +38,7 @@ import type { NavigationMenuItem } from "@nuxt/ui";
 const items = ref<NavigationMenuItem[]>([
   {
     label: "Home",
-    to: "/home-layout"
+    to: "/"
   },
   {
     label: "Supervision",
