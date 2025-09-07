@@ -1,5 +1,5 @@
 <template>
-  <div class="card w-100 rounded-2xl bg-white"
+  <div class="card w-100 rounded-2xl shadow-md bg-white"
        :data-state="state">
     <div class="card-header">
       <div class="card-cover"
@@ -22,27 +22,6 @@
             <span>Integrative practitioner and a lifelong learner</span>
             <span>Also: a mama of 2 cool kids, Projector 1/3 in HD, claircogznant neurospicy woman. Slightly woo 😊</span>
           </div>
-        </div>
-        <div class="px-5 text-center text-xl">
-          <ULink to="https://www.linkedin.com/company/kristina-sheppard/"
-                 target="_blank"
-                 class="mr-4">
-            <UIcon name="i-hugeicons-linkedin-02" />
-          </ULink>
-          <ULink to="https://www.youtube.com/@itskrissheppard"
-                 target="_blank"
-                 class="mr-4">
-            <UIcon name="i-hugeicons-youtube" />
-          </ULink>
-          <ULink to="https://www.instagram.com/itskrissheppard"
-                 target="_blank"
-                 class="mr-4">
-            <UIcon name="i-hugeicons-instagram" />
-          </ULink>
-          <ULink to="https://www.threads.net/@itskrissheppard"
-                 target="_blank">
-            <UIcon name="i-hugeicons-threads" />
-          </ULink>
         </div>
       </div>
       <div class="card-section"
@@ -94,6 +73,27 @@
             <button class="contact-me">
               WORK TOGETHER
             </button>
+          </div>
+          <div class="p-10 text-center text-xl">
+            <ULink to="https://www.linkedin.com/company/kristina-sheppard"
+                   target="_blank"
+                   class="mr-4">
+              <UIcon name="i-hugeicons-linkedin-02" />
+            </ULink>
+            <ULink to="https://www.youtube.com/@itskrissheppard"
+                   target="_blank"
+                   class="mr-4">
+              <UIcon name="i-hugeicons-youtube" />
+            </ULink>
+            <ULink to="https://www.instagram.com/itskrissheppard"
+                   target="_blank"
+                   class="mr-4">
+              <UIcon name="i-hugeicons-instagram" />
+            </ULink>
+            <ULink to="https://www.threads.net/@itskrissheppard"
+                   target="_blank">
+              <UIcon name="i-hugeicons-threads" />
+            </ULink>
           </div>
         </div>
       </div>
@@ -170,7 +170,7 @@ const setState = e => {
 }
 
 .card[data-state="#about"] {
-  height: 540px;
+  height: 500px;
 }
 
 .card[data-state="#about"] .card-main {
@@ -178,11 +178,11 @@ const setState = e => {
 }
 
 .card[data-state="#contact"] {
-  height: 430px;
+  height: 500px;
 }
 
 .card[data-state="#experience"] {
-  height: 550px;
+  height: 500px;
 }
 
 .card:not([data-state="#about"]) .card-header {

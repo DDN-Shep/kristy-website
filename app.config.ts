@@ -1,7 +1,7 @@
 export default defineAppConfig({
   ui: {
     container: {
-      base: 'w-full overflow-y-hidden'
+      base: 'w-full overflow-y-visible'
     }
   }
 })

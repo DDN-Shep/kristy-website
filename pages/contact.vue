@@ -40,6 +40,11 @@
 import * as v from 'valibot';
 import type { FormSubmitEvent } from '@nuxt/ui';
 
+interface Web3FormsResponse {
+  success: boolean
+  message: string
+}
+
 type Schema = v.InferOutput<typeof schema>
 const schema = v.object({
   email: v.pipe(v.string(), v.email('Invalid email')),
@@ -54,9 +59,27 @@ const state = reactive({
 
 const toast = useToast();
 async function onSubmit(event: FormSubmitEvent<Schema>) {
-  toast.add({ title: 'Success', description: 'The form has been submitted.', color: 'success' });
-  state.name = '';
-  state.email = '';
-  state.message = '';
+  try {
+    const response = await $fetch<Web3FormsResponse>('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: {
+        access_key: 'd8de2e1c-f3c8-4511-9e02-3518258b3584', // 'c0caa8e6-f21d-4d7a-a0f9-96589ea44770',
+        subject: 'Web Site Contact Submission',
+        name: state.name,
+        email: state.email,
+        message: state.message
+      }
+    });
+    toast.add({ title: 'Success', description: response.message ?? 'The form has been submitted.', color: 'success' });
+  }
+  catch {
+    toast.add({ title: 'Error', description: 'There was an issue sending the message.', color: 'error' });
+  }
+  finally {
+    state.name = '';
+    state.email = '';
+    state.message = '';
+  }
 };
 </script>

@@ -14,8 +14,13 @@ html {
 body {
   --ui-bg: var(--ui-color-white);
   font-size: 20px;
+  padding-bottom: 50px;
 }
 
+blockquote {
+  background-color: color-mix(in srgb, var(--color-primary), transparent 75%);
+  line-height: 1.4;
+}
 .page-break,
 .page-break-rtl {
   position: relative;

@@ -1,7 +1,9 @@
 <template>
-  <blockquote class="relative">
-    <slot class="italic text-lg" />
-    <cite class="pt-4 block text-sm">
+  <blockquote class="relative shadow-xl rounded-xl z-0 p-5">
+    <div class="pl-15">
+      <slot />
+    </div>
+    <cite class="pt-4 block text-sm text-right">
       <span class="uppercase">{{ author }}</span>
       <br>
       {{ description }}
@@ -17,19 +19,17 @@ defineProps({
 </script>
 
 <style scoped>
-blockquote {
-  line-height: 1.4;
-}
-
 blockquote:before {
   position: absolute;
   content: '\201C';
-  font-size: 7.5em;
+  font-size: 5em;
   font-weight: 700;
   opacity: 0.5;
-  top: -.2em;
-  left: -.2em;
+  top: 0;
+  left: 15px;
   z-index: -1;
+  opacity: 0.4;
+  font-style: italic;
 }
 
 cite span {

@@ -1,9 +1,9 @@
 <template>
-  <div class="absolute z-0">
+  <div>
     <br>
     <article v-for="post in state.posts"
              :key="post.id"
-             class="relative group/blog-post flex flex-col rounded-lg overflow-hidden lg:grid lg:grid-cols-4 lg:items-center gap-x-8 bg-default ring ring-default transition hover:bg-elevated/50 mb-10 lg:mx-40">
+             class="relative group/blog-post flex flex-col rounded-lg shadow overflow-hidden lg:grid lg:grid-cols-4 lg:items-center gap-x-8 bg-default ring ring-default transition hover:bg-elevated/50 mb-10 lg:mx-40">
       <div class="relative overflow-hidden aspect-[16/9] w-full pointer-events-none">
         <NuxtImg :alt="post.description"
                  :src="post.cover_image"
