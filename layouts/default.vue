@@ -10,12 +10,7 @@
                  class="w-100" />
       </div>
       <div class="lg:col-span-2 m-auto hidden lg:block order-3">
-        <UButton variant="outline"
-                 class="p-3 shadow-md">
-          Curious to find out more?
-          <br>
-          Click here to book a discovery call
-        </UButton>
+        <CalendlyDiscoveryCallPopup />
       </div>
     </div>
     <div class="main-content">
